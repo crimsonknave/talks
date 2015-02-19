@@ -66,29 +66,47 @@
     <h1>... But How?</h1>
   </section>
   <section>
-    <img src="images/theft.jpg">
+    <img class="stretch" src="images/theft.jpg">
   </section>
   <section>
-    <h2>Holman's</h2>
-    <p>split into logical groupings</p>
-    <p>my vimrc was 170+ lines long...</p>
+    <h2>
+      <a href="https://github.com/holman/dotfiles">Holman's</a>
+    </h2>
+    <ul>
+      <li>split into logical groupings</li>
+      <li>my vimrc was 170+ lines long...</li>
+      <li>comes with a bootstrapping script</li>
+    </ul>
   </section>
   <section>
-    <h2>Other options</h2>
+    <h1>Other options</h1>
+    <p>There are lots of other options, Github has a good list of some popular options.</p>
+    <p><a href="https://dotfiles.github.io/">https://dotfiles.github.io/</a></p>
   </section>
 </section>
 <section>
   <section>
-    <h1>Examples</h1>
+    <h1>So What?</h1>
   </section>
   <section>
-    <h3>git aliases</h3>
+    <h1>aliases</h1>
+    <h3>git</h3>
+    <pre><code>alias gs='git status -sb'
+alias ggpush='git push origin $(current_branch)'
+alias ggpull='git pull origin $(current_branch)'
+alias gco='git checkout'
+alias gc='git commit -v'
+alias ga='git add'</code></pre>
+    <h3>ruby</h3>
+    <pre><code class="bash">alias rsff="rspec --fail-fast"</code></pre>
   </section>
   <section>
-    <h3>rvm</h3>
-  </section>
-  <section>
+    <h1>Config files</h1>
     <h3>vimrc</h3>
+    <ul>
+      <li>Old was over 170 lines</li>
+      <li>New one is split into topical files</li>
+    </ul>
   </section>
   <section>
     <h3>powerline</h3>

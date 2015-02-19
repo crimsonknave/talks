@@ -51,21 +51,43 @@
   %section
     %h1 ... But How?
   %section
-    %img(src="images/theft.jpg")
+    %img.stretch(src="images/theft.jpg")
   %section
-    %h2 Holman's
-    %p split into logical groupings
-    %p my vimrc was 170+ lines long...
+    %h2
+      %a(href='https://github.com/holman/dotfiles') Holman's
+    %ul
+      %li split into logical groupings
+      %li my vimrc was 170+ lines long...
+      %li comes with a bootstrapping script
   %section
-    %h2 Other options
+    %h1 Other options
+    %p There are lots of other options, Github has a good list of some popular options.
+    %p https://dotfiles.github.io/
 %section
   %section
-    %h1 Examples
+    %h1 So What?
   %section
-    %h3 git aliases
+    %h1 aliases
+    %h3 git
+    %pre
+      %code
+        :preserve
+          alias gs='git status -sb'
+          alias ggpush='git push origin $(current_branch)'
+          alias ggpull='git pull origin $(current_branch)'
+          alias gco='git checkout'
+          alias gc='git commit -v'
+          alias ga='git add'
+    %h3 ruby
+    %pre
+      %code.bash
+        alias rsff="rspec --fail-fast"
   %section
-    %h3 rvm
-  %section
+    %h1 Config files
     %h3 vimrc
+    %ul
+      %li Old was over 170 lines
+      %li New one is split into topical files
+    
   %section
     %h3 powerline
