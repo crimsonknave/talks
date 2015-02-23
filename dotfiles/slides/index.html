@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
 
-<title>Slides</title>
+<title>Dotfiles... Whatfiles?</title>
 
 <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-<meta name="author" content="">
+<meta name="author" content="Joseph Henrich">
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -47,32 +47,32 @@
   by Joseph Henrich
 </section>
 <section>
-  <section>
+  <section data-autoslide="2000">
     <h1>What the heck are they?</h1>
-    <p class="fragment">The actual files</p>
-    <p class="fragment">The solution</p>
+    <p class="fragment" data-autoslide="2000">The actual files</p>
+    <p class="fragment" data-autoslide="2000">The solution</p>
   </section>
-  <section>
+  <section data-autoslide="500">
     <h1>The files</h1>
-    <span class="fragment">~/.vimrc</span>
+    <span class="fragment" data-autoslide="500">~/.vimrc</span>
     <br>
-    <span class="fragment">~/.zshrc</span>
+    <span class="fragment" data-autoslide="500">~/.zshrc</span>
     <br>
-    <span class="fragment">~/.config/awesome/rc.lua</span>
+    <span class="fragment" data-autoslide="500">~/.config/awesome/rc.lua</span>
     <br>
-    <span class="fragment">~/.tmux.conf</span>
+    <span class="fragment" data-autoslide="500">~/.tmux.conf</span>
     <br>
-    <span class="fragment">and</span>
-    <span class="fragment">so</span>
-    <span class="fragment">many</span>
-    <span class="fragment">more!</span>
+    <span class="fragment" data-autoslide="500">and</span>
+    <span class="fragment" data-autoslide="500">so</span>
+    <span class="fragment" data-autoslide="500">many</span>
+    <span class="fragment" data-autoslide="500">more!</span>
   </section>
-  <section>
+  <section data-autoslide="1000">
     <h1>The solution</h1>
     <p>
-      <span class="fragment highlight-red">Centralized,</span>
-      <span class="fragment highlight-red">versioned</span>
-      <span class="fragment highlight-red">and scripted</span>
+      <span class="fragment highlight-red" data-autoslide="5000">Centralized,</span>
+      <span class="fragment highlight-red" data-autoslide="5000">versioned</span>
+      <span class="fragment highlight-red" data-autoslide="5000">and scripted</span>
     </p>
   </section>
 </section>
@@ -181,7 +181,7 @@ alias ga='git add'</code></pre>
       { src: 'plugin/notes/notes.js', async: true }
     ]
   };
-  var configOptions = {"controls":true,"progress":true,"history":true,"center":true}
+  var configOptions = {"autoSlide":7500,"autoSlideStoppable":false}
   var initializeOptions = {};
   extend(initializeOptions, baseOptions);
   extend(initializeOptions, configOptions);

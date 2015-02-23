@@ -1,0 +1,6 @@
+author: 'Joseph Henrich'
+title: 'Dotfiles... Whatfiles?'
+revealjs_config:
+  #autoSlide: 15000
+  autoSlide: 7500
+  autoSlideStoppable: false
