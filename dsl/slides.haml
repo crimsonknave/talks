@@ -1,0 +1,52 @@
+%section
+  %h1 Writing a 'DSL' in ruby
+  Joseph Henrich
+%section
+  %h3 Disclaimer
+  This is not a talk about how to write a real DSL (read: actual language spec ala HTML/Regex), instead it's a talk about how to write language specific to your domain.
+%section
+  %section
+    %h1 Types
+    %ul
+      %li Config Blocks
+      %li class keywords
+      %li other blocks
+  %section
+    %h1 config blocks
+    %pre
+      %code.ruby
+        :preserve
+          MyGem.configure do |config|
+            config.be_awesome
+            config.thingy = 'I am a thing'
+          end
+  %section
+    %h1 class keywords
+    %pre
+      %code.ruby
+        :preserve
+          class Model &lt; ActiveRecord::Model
+            has_many :things
+            belongs_to :owner
+          end
+  %section
+    %h1 other blocks
+    %pre
+      %code.ruby
+        :preserve
+          # Sinatra
+          get '/hi' do
+            "Hello World!"
+          end
+%section
+  %section
+    %h1 how
+  %section
+    metaprogramming
+    define method
+  %section
+    class methods
+  %section
+    optional prams instead of =
+  %section
+    before/after section

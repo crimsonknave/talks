@@ -1,21 +1,57 @@
 <section>
-
-<ul>
-<li>What is?</li>
-<li>Types
-** Config blocks
-*** Common pattern
-*** Twitter got rid of them
-** class keywords
-*** Cot example
-** Other blocks
-*** jpb extensions</li>
-<li>How
-** metaprogramming
-*** define_class
-** class methods
-** optional params instead of =
-** before/after section</li>
-</ul>
-
+  <h1>Writing a 'DSL' in ruby</h1>
+  Joseph Henrich
+</section>
+<section>
+  <h3>Disclaimer</h3>
+  This is not a talk about how to write a real DSL (read: actual language spec ala HTML/Regex), instead it's a talk about how to write language specific to your domain.
+</section>
+<section>
+  <section>
+    <h1>Types</h1>
+    <ul>
+      <li>Config Blocks</li>
+      <li>class keywords</li>
+      <li>other blocks</li>
+    </ul>
+  </section>
+  <section>
+    <h1>config blocks</h1>
+    <pre><code class="ruby">MyGem.configure do |config|
+  config.be_awesome
+  config.thingy = 'I am a thing'
+end</code></pre>
+  </section>
+  <section>
+    <h1>class keywords</h1>
+    <pre><code class="ruby">class Model &lt; ActiveRecord::Model
+  has_many :things
+  belongs_to :owner
+end</code></pre>
+  </section>
+  <section>
+    <h1>other blocks</h1>
+    <pre><code class="ruby"># Sinatra
+get '/hi' do
+  "Hello World!"
+end</code></pre>
+  </section>
+</section>
+<section>
+  <section>
+    <h1>how</h1>
+  </section>
+  <section>
+    metaprogramming
+    define method
+  </section>
+  <section>
+    class methods
+  </section>
+  <section>
+    optional prams instead of =
+  </section>
+  <section>
+    before/after section
+  </section>
 </section>
