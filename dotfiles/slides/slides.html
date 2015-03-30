@@ -4,32 +4,32 @@
   by Joseph Henrich
 </section>
 <section>
-  <section data-autoslide="2000">
+  <section data-autoslide="3000">
     <h1>What the heck are they?</h1>
-    <p class="fragment" data-autoslide="2000">The actual files</p>
-    <p class="fragment" data-autoslide="2000">The solution</p>
+    <p class="fragment" data-autoslide="3000">The actual files</p>
+    <p class="fragment" data-autoslide="3000">The solution</p>
   </section>
-  <section data-autoslide="500">
+  <section data-autoslide="750">
     <h1>The files</h1>
-    <span class="fragment" data-autoslide="500">~/.vimrc</span>
+    <span class="fragment" data-autoslide="750">~/.vimrc</span>
     <br>
-    <span class="fragment" data-autoslide="500">~/.zshrc</span>
+    <span class="fragment" data-autoslide="750">~/.zshrc</span>
     <br>
-    <span class="fragment" data-autoslide="500">~/.config/awesome/rc.lua</span>
+    <span class="fragment" data-autoslide="750">~/.config/awesome/rc.lua</span>
     <br>
-    <span class="fragment" data-autoslide="500">~/.tmux.conf</span>
+    <span class="fragment" data-autoslide="750">~/.tmux.conf</span>
     <br>
-    <span class="fragment" data-autoslide="500">and</span>
-    <span class="fragment" data-autoslide="500">so</span>
-    <span class="fragment" data-autoslide="500">many</span>
-    <span class="fragment" data-autoslide="500">more!</span>
+    <span class="fragment" data-autoslide="750">and</span>
+    <span class="fragment" data-autoslide="750">so</span>
+    <span class="fragment" data-autoslide="750">many</span>
+    <span class="fragment" data-autoslide="750">more!</span>
   </section>
   <section data-autoslide="1000">
     <h1>The solution</h1>
     <p>
-      <span class="fragment highlight-red" data-autoslide="5000">Centralized,</span>
-      <span class="fragment highlight-red" data-autoslide="5000">versioned</span>
-      <span class="fragment highlight-red" data-autoslide="5000">and scripted</span>
+      <span class="fragment highlight-red" data-autoslide="7500">Centralized,</span>
+      <span class="fragment highlight-red" data-autoslide="7500">versioned</span>
+      <span class="fragment highlight-red" data-autoslide="7500">and scripted</span>
     </p>
   </section>
 </section>
@@ -73,15 +73,17 @@
       <a href="https://github.com/holman/dotfiles">Holman's</a>
     </h2>
     <ul>
-      <li>split into logical groupings</li>
-      <li>my vimrc was 170+ lines long...</li>
-      <li>comes with a bootstrapping script</li>
+      <li class="fragment" data-autoslide="10000">split into logical groupings</li>
+      <li class="fragment">comes with a bootstrapping script</li>
     </ul>
   </section>
   <section>
     <h1>Other options</h1>
     <p>There are lots of other options, Github has a good list of some popular options.</p>
     <p><a href="https://dotfiles.github.io/">https://dotfiles.github.io/</a></p>
+  </section>
+  <section>
+    <h3>Don't build it if you don't need to.</h3>
   </section>
 </section>
 <section>
@@ -90,15 +92,19 @@
   </section>
   <section>
     <h1>aliases</h1>
-    <h3>git</h3>
-    <pre><code>alias gs='git status -sb'
+    <div class="git fragment">
+      <h3>git</h3>
+      <pre><code>alias gs='git status -sb'
 alias ggpush='git push origin $(current_branch)'
 alias ggpull='git pull origin $(current_branch)'
 alias gco='git checkout'
 alias gc='git commit -v'
 alias ga='git add'</code></pre>
-    <h3>ruby</h3>
-    <pre><code class="bash">alias rsff="rspec --fail-fast"</code></pre>
+    </div>
+    <div class="ruby fragment">
+      <h3>ruby</h3>
+      <pre><code class="bash">alias rsff="rspec --fail-fast"</code></pre>
+    </div>
   </section>
   <section>
     <h1>Config files</h1>
@@ -110,5 +116,23 @@ alias ga='git add'</code></pre>
   </section>
   <section>
     <h3>powerline</h3>
+    Powerline is a status tool, it replaces my shell prompt, vim status line, tmux status line and is a widget in awesome. Having the same thing do all of that lets me standardize on what I want to see and how I want to see it.
+    TODO: Insert screenshot
+  </section>
+  <section>
+    <h3>What I have configured in mine</h3>
+    <ul>
+      <li>vim (.vimrc and installs plugins)</li>
+      <li>tmux</li>
+      <li>awesome</li>
+      <li>powerline</li>
+      <li>aliases for ssh, git, rvm</li>
+      <li>sets my zsh keybindings to be vimlike</li>
+      <li>sets zsh syntax highlighting</li>
+      <li>adds custom scripts to the path</li>
+    </ul>
+  </section>
+  <section>
+    <a href="https://github.com/crimsonknave/dotfiles">https://github.com/crimsonknave/dotfiles</a>
   </section>
 </section>

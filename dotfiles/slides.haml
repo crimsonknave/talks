@@ -3,30 +3,30 @@
   %h3 What files?
   by Joseph Henrich
 %section
-  %section(data-autoslide='2000')
+  %section(data-autoslide='3000')
     %h1 What the heck are they?
-    %p.fragment(data-autoslide='2000') The actual files
-    %p.fragment(data-autoslide='2000') The solution
-  %section(data-autoslide='500')
+    %p.fragment(data-autoslide='3000') The actual files
+    %p.fragment(data-autoslide='3000') The solution
+  %section(data-autoslide='750')
     %h1 The files
-    %span.fragment(data-autoslide='500') ~/.vimrc
+    %span.fragment(data-autoslide='750') ~/.vimrc
     %br
-    %span.fragment(data-autoslide='500') ~/.zshrc
+    %span.fragment(data-autoslide='750') ~/.zshrc
     %br
-    %span.fragment(data-autoslide='500') ~/.config/awesome/rc.lua
+    %span.fragment(data-autoslide='750') ~/.config/awesome/rc.lua
     %br
-    %span.fragment(data-autoslide='500') ~/.tmux.conf
+    %span.fragment(data-autoslide='750') ~/.tmux.conf
     %br
-    %span.fragment(data-autoslide='500') and
-    %span.fragment(data-autoslide='500') so
-    %span.fragment(data-autoslide='500') many
-    %span.fragment(data-autoslide='500') more!
+    %span.fragment(data-autoslide='750') and
+    %span.fragment(data-autoslide='750') so
+    %span.fragment(data-autoslide='750') many
+    %span.fragment(data-autoslide='750') more!
   %section(data-autoslide='1000')
     %h1 The solution
     %p
-      %span.fragment.highlight-red(data-autoslide='5000') Centralized,
-      %span.fragment.highlight-red(data-autoslide='5000') versioned
-      %span.fragment.highlight-red(data-autoslide='5000') and scripted
+      %span.fragment.highlight-red(data-autoslide='7500') Centralized,
+      %span.fragment.highlight-red(data-autoslide='7500') versioned
+      %span.fragment.highlight-red(data-autoslide='7500') and scripted
 %section
   %section
     %h1 Why
@@ -56,32 +56,35 @@
     %h2
       %a(href='https://github.com/holman/dotfiles') Holman's
     %ul
-      %li split into logical groupings
-      %li my vimrc was 170+ lines long...
-      %li comes with a bootstrapping script
+      %li.fragment(data-autoslide='10000') split into logical groupings
+      %li.fragment comes with a bootstrapping script
   %section
     %h1 Other options
     %p There are lots of other options, Github has a good list of some popular options.
     %p https://dotfiles.github.io/
+  %section
+    %h3 Don't build it if you don't need to.
 %section
   %section
     %h1 So What?
   %section
     %h1 aliases
-    %h3 git
-    %pre
-      %code
-        :preserve
-          alias gs='git status -sb'
-          alias ggpush='git push origin $(current_branch)'
-          alias ggpull='git pull origin $(current_branch)'
-          alias gco='git checkout'
-          alias gc='git commit -v'
-          alias ga='git add'
-    %h3 ruby
-    %pre
-      %code.bash
-        alias rsff="rspec --fail-fast"
+    .git.fragment
+      %h3 git
+      %pre
+        %code
+          :preserve
+            alias gs='git status -sb'
+            alias ggpush='git push origin $(current_branch)'
+            alias ggpull='git pull origin $(current_branch)'
+            alias gco='git checkout'
+            alias gc='git commit -v'
+            alias ga='git add'
+    .ruby.fragment
+      %h3 ruby
+      %pre
+        %code.bash
+          alias rsff="rspec --fail-fast"
   %section
     %h1 Config files
     %h3 vimrc
@@ -91,3 +94,18 @@
     
   %section
     %h3 powerline
+    Powerline is a status tool, it replaces my shell prompt, vim status line, tmux status line and is a widget in awesome. Having the same thing do all of that lets me standardize on what I want to see and how I want to see it.
+    TODO: Insert screenshot
+  %section
+    %h3 What I have configured in mine
+    %ul
+      %li vim (.vimrc and installs plugins)
+      %li tmux
+      %li awesome
+      %li powerline
+      %li aliases for ssh, git, rvm
+      %li sets my zsh keybindings to be vimlike
+      %li sets zsh syntax highlighting
+      %li adds custom scripts to the path
+  %section
+    https://github.com/crimsonknave/dotfiles

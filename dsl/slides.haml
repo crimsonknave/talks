@@ -1,5 +1,5 @@
 %section
-  %h1 Writing a 'DSL' in ruby
+  %h1 So, you want to write a 'DSL' in ruby
   Joseph Henrich
 %section
   %h3 Disclaimer
@@ -106,6 +106,26 @@
             define_attribute_method name
           end
   %section
+    %h1 Cot
+    %pre
+      %code.ruby
+        :preserve
+          module Cot
+            class Property
+              attr_accessor :args
+              def initialize(params = {})
+                @args = params
+              end
+
+              [:missing, :value].each do |method_name|
+                define_method method_name do |&block|
+                  return args[method_name] unless block
+                  args[method_name] = block
+                end
+              end
+            end
+          end
+  %section
     %h1 Jenkins Pipeline Builder
     %pre
       %code.ruby
@@ -124,7 +144,8 @@
             end
           end
   %section
-    %h3 Jenkins Pipeline Builder - Extension Sets
+    %h3 Jenkins Pipeline Builder
+    %h5 Extensions
     %pre
       %code.ruby
         :preserve
@@ -144,4 +165,34 @@
             end
           end
   %section
-    %h3 Jenkins Pipeline Builder - Extension Blocks
+    %h3 Campaign Service Gem
+    %h5 Initialization
+    %pre
+      %code.ruby
+        :preserve
+          CampaignService.configure do |config|
+            config.log = Logging.logger["API::CampaignService"]
+            config.base_url = "https://campaignapi#{APP_CONFIG['url_prefix']}roving.com/campaignapi"
+            config.cyberark_config = APP_CONFIG['cyberark']
+            config.username = APP_CONFIG['cyberark']['app_name']
+            config.set_password_via_cyberark
+          end
+  %section
+    %h3 Campaign Service Gem
+    %h5 Config Block
+    %pre
+      %code.ruby
+        :preserve
+          module CampaignService
+            class &lt;&lt; self
+              def configure
+                yield(conf)
+                conf.set_client
+                conf
+              end
+
+              def conf
+                @_configuration || Configuration.new
+              end
+            end
+          end

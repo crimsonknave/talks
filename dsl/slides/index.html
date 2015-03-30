@@ -42,7 +42,7 @@
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
     <section>
-  <h1>Writing a 'DSL' in ruby</h1>
+  <h1>So, you want to write a 'DSL' in ruby</h1>
   Joseph Henrich
 </section>
 <section>
@@ -148,6 +148,24 @@ end</code></pre>
 end</code></pre>
   </section>
   <section>
+    <h1>Cot</h1>
+    <pre><code class="ruby">module Cot
+  class Property
+    attr_accessor :args
+    def initialize(params = {})
+      @args = params
+    end
+
+    [:missing, :value].each do |method_name|
+      define_method method_name do |&amp;block|
+        return args[method_name] unless block
+        args[method_name] = block
+      end
+    end
+  end
+end</code></pre>
+  </section>
+  <section>
     <h1>Jenkins Pipeline Builder</h1>
     <pre><code class="ruby">builder do
   name :shell_command
@@ -164,7 +182,8 @@ end</code></pre>
 end</code></pre>
   </section>
   <section>
-    <h3>Jenkins Pipeline Builder - Extension Sets</h3>
+    <h3>Jenkins Pipeline Builder</h3>
+    <h5>Extensions</h5>
     <pre><code class="ruby">[:builder, :trigger, :publisher].each do |type, path|
   define_method type do |&amp;block|
     set = JenkinsPipelineBuilder::ExtensionSet.new
@@ -182,7 +201,26 @@ end</code></pre>
 end</code></pre>
   </section>
   <section>
-    <h3>Jenkins Pipeline Builder - Extension Blocks</h3>
+    <h3>Campaign Service Gem</h3>
+    <h5>Initialization</h5>
+    <pre><code class="ruby"></code></pre>
+  </section>
+  <section>
+    <h3>Campaign Service Gem</h3>
+    <h5>Config Block</h5>
+    <pre><code class="ruby">module CampaignService
+  class &lt;&lt; self
+    def configure
+      yield(conf)
+      conf.set_client
+      conf
+    end
+
+    def conf
+      @_configuration || Configuration.new
+    end
+  end
+end</code></pre>
   </section>
 </section>
 
