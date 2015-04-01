@@ -1,6 +1,5 @@
 %section
-  %h1 So, you want to write a 'DSL' in ruby
-  Joseph Henrich
+  %img.stretch(style='border:none' src='images/title.png')
 %section
   %h3 Disclaimer
   This is not a talk about how to write a real DSL (read: actual language spec ala HTML/Regex), instead it's a talk about how to write language specific to your domain.
@@ -42,7 +41,7 @@
   %section
     %h1 how
   %section
-    %h1 metaprogramming
+    %h1 meta-Fin-programming
     Metaprogramming is the most important piece of writing some language specific code. Heavy use of define method lets you create methods on the fly based on how your code is used.
   %section
     %h1 class methods
@@ -64,7 +63,8 @@
   %section
     %h1 Examples
   %section
-    %h1 Cot
+    %h3 Cot
+    %h5 Property
     %pre
       %code.ruby
         :preserve
@@ -85,7 +85,8 @@
             end
           end
   %section
-    %h1 Cot
+    %h3 Cot
+    %h5 Property definition
     %pre
       %code.ruby
         :preserve
@@ -106,7 +107,8 @@
             define_attribute_method name
           end
   %section
-    %h1 Cot
+    %h3 Cot
+    %h5 Property class
     %pre
       %code.ruby
         :preserve
@@ -126,7 +128,8 @@
             end
           end
   %section
-    %h1 Jenkins Pipeline Builder
+    %h3 Jenkins Pipeline Builder
+    %h5 Adding a new builder
     %pre
       %code.ruby
         :preserve
@@ -145,7 +148,7 @@
           end
   %section
     %h3 Jenkins Pipeline Builder
-    %h5 Extensions
+    %h5 Extensions definition
     %pre
       %code.ruby
         :preserve
@@ -172,7 +175,7 @@
         :preserve
           CampaignService.configure do |config|
             config.log = Logging.logger["API::CampaignService"]
-            config.base_url = "https://campaignapi#{APP_CONFIG['url_prefix']}roving.com/campaignapi"
+            config.base_url = "https://campaignapi#&#123;APP_CONFIG['url_prefix']}roving.com/campaignapi"
             config.cyberark_config = APP_CONFIG['cyberark']
             config.username = APP_CONFIG['cyberark']['app_name']
             config.set_password_via_cyberark
@@ -196,3 +199,12 @@
               end
             end
           end
+%section
+  %pre
+    %code.ruby
+      :preserve
+        talk do
+          after do |questions|
+            yield questions
+          end
+        end
